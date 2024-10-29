@@ -19,6 +19,16 @@ const authStore = useAuthStore();
               >Home</RouterLink
             >
           </li>
+          <li v-if="authStore.user">
+            <RouterLink to="/transactions" class="nav-link px-2 text-white"
+              >Transactions</RouterLink
+            >
+          </li>
+          <li v-if="authStore.user">
+            <RouterLink to="/users" class="nav-link px-2 text-white"
+              >Users</RouterLink
+            >
+          </li>
         </ul>
 
         <div v-if="!authStore.user" class="text-end">
@@ -35,7 +45,7 @@ const authStore = useAuthStore();
       </div>
     </div>
   </header>
-  <div class="container">
+  <div class="container mt-5">
     <RouterView />
   </div>
 </template>
