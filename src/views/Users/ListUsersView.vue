@@ -16,7 +16,7 @@ onMounted(async () => {
         <h2>Users List</h2>
       </div>
       <div class="col text-end">
-        <RouterLink to="/users/create" class="btn btn-success"
+        <RouterLink to="/users/create" class="btn btn-primary"
           >Add New User</RouterLink
         >
       </div>
