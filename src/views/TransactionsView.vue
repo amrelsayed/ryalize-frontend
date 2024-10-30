@@ -24,6 +24,8 @@ watch(params, fetchTransactions, { deep: true });
 
 <template>
   <div class="mb-5">
+    <h2 class="mb-5">Transactions List</h2>
+
     <div class="row">
       <div class="col-auto">
         <label>Amount From: </label>
