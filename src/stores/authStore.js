@@ -26,7 +26,6 @@ export const useAuthStore = defineStore("authStore", {
                 this.errors = data.errors
             }
         },
-
         async logout() {
             const res = await fetch('/api/logout', {
                 method: 'POST',
@@ -46,5 +45,18 @@ export const useAuthStore = defineStore("authStore", {
                 this.router.push('/')
             }
         },
+        async getUser() {
+            if (localStorage.getItem("token")) {
+              const res = await fetch("/api/user", {
+                headers: {
+                  authorization: `Bearer ${localStorage.getItem("token")}`,
+                },
+              });
+              const data = await res.json();
+              if (res.ok) {
+                this.user = data.data;
+              }
+            }
+          },
     }
 })
